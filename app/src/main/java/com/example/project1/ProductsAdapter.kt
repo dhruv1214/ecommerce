@@ -1,6 +1,5 @@
 package com.example.project1
 
-
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -20,12 +19,12 @@ class ProductsAdapter(options: FirebaseRecyclerOptions<Products>) : FirebaseRecy
         return MyViewHolder(inflater, parent)
     }
     override fun onBindViewHolder(holder: MyViewHolder, position: Int, model: Products) {
-
+        holder.name.text = model.name
+        holder.price.text =  model.price
         val storRef: StorageReference = FirebaseStorage.getInstance().getReferenceFromUrl(model.image)
         Glide.with(holder.imgProduct.context).load(storRef).circleCrop().into(holder.imgProduct)
 
-        holder.name.text = model.name
-        holder.price.text = "$ " + model.price
+
         holder.itemView.setOnClickListener{
             Log.i("clicked","clicked");
             val i = Intent(it.context, DetailActivity::class.java)

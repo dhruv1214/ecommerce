@@ -1,11 +1,11 @@
 package com.example.project1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
-class CheckOutActivity : AppCompatActivity() {
+class CheckoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_check_out)
+        setContentView(R.layout.checkout_form)
     }
 }
